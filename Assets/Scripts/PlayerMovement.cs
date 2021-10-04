@@ -1,41 +1,84 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Rigidbody rb;
-
-    float yRot = -90f;
-
     [SerializeField]
-    float walkSpeed;
+    float speed = 2f;
+
     [SerializeField]
     float turnSpeed;
+    [SerializeField]
+    float knodSpeed;
+    [SerializeField]
+    Vector2 knodLimits;
+    float knodAngle;
 
-    void Start()
+    float navMeshCheckDistance = 1f;
+
+    Rigidbody rb;
+
+    private void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+
         rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        yRot += Input.GetAxis("Mouse X") * turnSpeed;
-        if (yRot < 0) yRot += 360f;
-        if (yRot > 360f) yRot -= 360f;
-        transform.eulerAngles = new Vector3(0, yRot, 0);
-
-        Debug.Log(transform.forward);
+        Turn();
+        Knod();
+        //NavMove();
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        Debug.DrawRay(rb.position, transform.forward);
-        if (Input.GetKey(KeyCode.W))
+        PhysicsMove();
+    }
+
+    void Knod()
+    {
+        knodAngle -= Input.GetAxis("Mouse Y") * knodSpeed * Time.deltaTime;
+
+        if (knodAngle < knodLimits.x) knodAngle = knodLimits.x;
+        if (knodAngle > knodLimits.y) knodAngle = knodLimits.y;
+
+        Camera.main.transform.localEulerAngles = new Vector3(knodAngle, 0);
+    }
+
+    void Turn()
+    {
+        if(Mathf.Abs(Input.GetAxis("Mouse X")) > 0.01f)
         {
-            Vector3 currPos = rb.position;
-            Vector3 newPos = rb.position + transform.forward * walkSpeed * Time.deltaTime;
-            rb.MovePosition(newPos);
+            transform.Rotate(transform.up, Input.GetAxis("Mouse X") * turnSpeed * Time.deltaTime);
+        }
+    }
+
+    void PhysicsMove()
+    {
+        if(Mathf.Abs(Input.GetAxis("Vertical")) > 0.01f)
+        {
+            Vector3 newPosition = transform.position + transform.forward * Input.GetAxis("Vertical") * speed * Time.deltaTime;
+
+            rb.MovePosition(newPosition);
+        }
+    }    
+
+    void NavMove()
+    {
+        if(Mathf.Abs(Input.GetAxis("Vertical")) > 0.01f)
+        {
+            Vector3 newPosition = transform.position + transform.forward * Input.GetAxis("Vertical") * speed * Time.deltaTime;
+
+            NavMeshHit hit;
+            bool isValid = NavMesh.SamplePosition(newPosition, out hit, navMeshCheckDistance, NavMesh.AllAreas);
+            if(isValid)
+            {
+                transform.position = newPosition;
+            }
         }
     }
 }
