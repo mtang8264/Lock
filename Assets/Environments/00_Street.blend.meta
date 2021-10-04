@@ -12,8 +12,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Brick
+    second: {fileID: 2100000, guid: 4fe6f1ca560ff42b98a3820d5ca7ca6e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Concrete
     second: {fileID: 2100000, guid: d7fd558d6d2214a68855feb39ed960f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gothic
+    second: {fileID: 2100000, guid: b000662ca6bbf45a7a1a2b8a1c5c557e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stone
+    second: {fileID: 2100000, guid: 73675180b4eb743499bd4b3a25fddc78, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
