@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.21982911, g: 0.31007478, b: 0.49056602, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 5
+  m_AmbientIntensity: 6.06
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.25151297, g: 0.27644965, b: 0.33962262, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: e9c3c0b2e0c504c4b8a3445de03d458b, type: 2}
@@ -34,11 +34,11 @@ RenderSettings:
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
-  m_ReflectionBounces: 1
-  m_ReflectionIntensity: 0.444
+  m_ReflectionBounces: 2
+  m_ReflectionIntensity: 0.664
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1636728165}
-  m_IndirectSpecularColor: {r: 0.00025780592, g: 0.000090350426, b: 0.0012633473, a: 0.444}
+  m_IndirectSpecularColor: {r: 0.00038554755, g: 0.00013511865, b: 0.0018893302, a: 0.664}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -491,9 +491,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5595422955553279306, guid: d86e094b1d0bd428a836c528d603609e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -2520690346965907661, guid: d86e094b1d0bd428a836c528d603609e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d86e094b1d0bd428a836c528d603609e, type: 3}
       propertyPath: m_Name
       value: 00_Street
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d86e094b1d0bd428a836c528d603609e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d86e094b1d0bd428a836c528d603609e, type: 3}
@@ -552,9 +564,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 027d13fbda3174ad7a413fe662a549fc, type: 2}
+    - target: {fileID: 635547659545568360, guid: 61cc23a4658ae4bb9890e09c57acba99, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 901897122485332503, guid: 61cc23a4658ae4bb9890e09c57acba99, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 61cc23a4658ae4bb9890e09c57acba99, type: 3}
       propertyPath: m_Name
       value: Car_00
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 61cc23a4658ae4bb9890e09c57acba99, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61cc23a4658ae4bb9890e09c57acba99, type: 3}
@@ -710,13 +734,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636728164}
-  m_LocalRotation: {x: 0.196357, y: -0.5048161, z: -0.043370284, w: 0.8394782}
+  m_LocalRotation: {x: 0.20754807, y: -0.45358613, z: -0.03579939, w: 0.86596876}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 16.612, y: -64.456, z: -16.432}
+  m_LocalEulerAnglesHint: {x: 19.086, y: -57.887, z: -15.358}
 --- !u!1 &1873687691
 GameObject:
   m_ObjectHideFlags: 0
